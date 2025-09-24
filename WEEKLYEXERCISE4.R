@@ -10,3 +10,10 @@ gold_ts <- olympics_main %>% filter(country %in% top5) %>% group_by(country, yea
 
 ggplot(gold_ts,aes(x=year,y=gold,color=country))+geom_line(size = 1)+labs(title="Gold Medals Over Time (Top 5 Countries)",x="Year",y="Gold Medals")+theme_minimal()
 
+library(tidyverse)
+
+Olympics <- readr::read_csv("Olympics.csv") %>% mutate(total.medals = gold + silver + bronze)
+
+country_gold <- Olympics %>% group_by(country) %>% summarise(total_gold = sum(gold, na.rm = TRUE))
+
+year_medals <- Olympics %>% group_by(year) %>% summarise(total_medals_given = sum(total.medals, na.rm = TRUE))
