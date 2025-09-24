@@ -1,4 +1,4 @@
-library(readr)
+
 library(tidyverse)
 
 Olympics <- readr::read_csv("Olympics.csv") %>% mutate(total.medals = gold + silver + bronze)
