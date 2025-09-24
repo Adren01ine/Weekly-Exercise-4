@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 library(tidyverse)
 library(ggplot2)
 
@@ -9,3 +10,6 @@ gold_ts <- olympics_main %>% filter(country %in% top5) %>% group_by(country, yea
 
 
 ggplot(gold_ts,aes(x=year,y=gold,color=country))+geom_line(size = 1)+labs(title="Gold Medals Over Time (Top 5 Countries)",x="Year",y="Gold Medals")+theme_minimal()
+=======
+test
+>>>>>>> 55527093b096d65111d1115b050a2b759b133a7c
